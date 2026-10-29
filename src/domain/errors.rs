@@ -1,4 +1,3 @@
-
 use serde::Serialize;
 use thiserror::Error;
 
@@ -21,13 +20,13 @@ pub enum VerificationStatus {
 pub enum VerifyError {
     #[error("Malformed input: {0}")]
     MalformedInput(String),
-    
+
     #[error("Missing evidence: {0}")]
     MissingEvidence(String),
-    
+
     #[error("Unsupported protocol version: {0}")]
     UnsupportedVersion(u32),
-    
+
     #[error("I/O Error: {0}")]
     Io(#[from] std::io::Error),
 }
