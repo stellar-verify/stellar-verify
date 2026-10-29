@@ -9,7 +9,7 @@ fn main() {
     match &cli.command {
         Commands::VerifyInclusion {
             tx_file,
-            ledger_file,
+            ledger_file: _,
         } => {
             println!("Reading transaction evidence from: {}", tx_file.display());
 
