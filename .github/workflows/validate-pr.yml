@@ -1,0 +1,38 @@
+name: Validate PR Title
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  validate-pr:
+    name: Validate Conventional Commit Title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR Title
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # Configure allowed types based on your project conventions
+          types: |
+            feat
+            fix
+            docs
+            test
+            chore
+            refactor
+            perf
+            ci
+            build
+            revert
+          # Require a scope (optional, set to true if you want e.g. feat(cli): ...)
+          requireScope: false
+          # Custom error message for contributors
+          subjectPattern: ^([a-z]+)(\(.+\))?!?: (.+)$
+          subjectPatternError: |
+            The PR title must follow the Conventional Commits specification!
+            Examples:
+              - feat: add batch verification command
+              - fix: resolve XDR parsing overflow
+              - docs: update README build instructions
