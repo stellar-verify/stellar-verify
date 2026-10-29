@@ -1,36 +1,22 @@
-# Contributing to Stellar Verify
+# Contributing to stellar-verify
 
-Thank you for your interest in contributing. This project prioritizes correct cryptographic boundaries, deterministic results, and explicit trust assumptions. 
+First off, thank you for considering contributing to `stellar-verify`! 
 
-## Local Setup
+## 🛠 Local Development Setup
+1. Fork and clone the repository.
+2. Ensure you have the [Rust toolchain](https://rustup.rs/) installed (1.75.0+).
+3. Run `cargo build` to compile the project.
 
-1. Ensure you have a stable Rust toolchain installed.
-2. Clone the repository:
-   ```bash
-   git clone [https://github.com/stellar-verify/stellar-verify.git](https://github.com/stellar-verify/stellar-verify.git)
-   cd stellar-verify
+## 📌 PR Expectations and Review Cadence
+- **Review Cadence:** PRs are reviewed within 48 hours of submission.
+- **CI Requirements:** GitHub Actions CI checks (`fmt`, `clippy`, `test`) **must pass** before a maintainer will begin a code review.
+- **Commit Standards:** We use Conventional Commits (e.g., `feat:`, `fix:`, `docs:`).
 
-3. Build the project:
-    Bash
-
-    cargo build
-
-Development Workflow
-
-Before opening a pull request, ensure your changes pass the project's strict quality gates:
-
-    Format: cargo fmt --all
-
-    Lint: cargo clippy --workspace --all-targets -- -D warnings
-
-    Test: cargo test --workspace
-
-Pull Request Guidelines
-
-    Discuss first: If you are adding a new feature or verification workflow, open an issue to discuss the protocol-level evidence requirements before writing code.
-
-    Scope: Keep pull requests narrowly scoped to a single issue.
-
-    Testing: Any new verification check must include test fixtures representing valid, invalid, malformed, and incomplete evidence.
-
-    No panic: The core library must not panic on user-controlled input. Map all errors to the typed VerifyError enum.
+## ✅ Pre-Pull Request Checklist
+Before opening a PR, you **must** run the following locally:
+\`\`\`bash
+cargo fmt --all
+cargo clippy --workspace --all-targets -- -D warnings
+cargo test
+\`\`\`
+If your PR introduces new logic, you must include deterministic XDR test fixtures demonstrating the success and failure paths.

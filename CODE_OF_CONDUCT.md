@@ -1,12 +1,7 @@
-# Code of Conduct
+# Contributor Covenant Code of Conduct
 
-We are committed to providing a friendly, safe, and welcoming environment for all, regardless of experience level, background, or identity.
+## Our Pledge
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-## Expectations
-
-* Participate in an authentic and active way.
-* Exercise consideration and respect in your speech and actions.
-* Attempt collaboration before conflict.
-* Refrain from demeaning, discriminatory, or harassing behavior and speech.
-
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project maintainers and will result in a ban from the repository.
+## Enforcement
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement. All complaints will be reviewed and investigated promptly and fairly.
