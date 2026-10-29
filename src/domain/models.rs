@@ -1,6 +1,5 @@
-
-use serde::Serialize;
 use super::errors::{VerificationStatus, VerifyError};
+use serde::Serialize;
 
 /// The deterministic JSON output structure for the CLI.
 #[derive(Serialize, Debug)]
